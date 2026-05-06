@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { runAudit } from "@/lib/audit-engine";
+import { runAudit } from "../audit-engine";
 
 describe("Audit Engine", () => {
 
@@ -61,7 +61,6 @@ describe("Audit Engine", () => {
     expect(result.totalMonthlySpend).toBe(30);
   });
 
-
   test("detects Claude Max overkill for a single user", () => {
     const result = runAudit({
       tools: [
@@ -100,3 +99,4 @@ describe("Audit Engine", () => {
   });
 
 });
+
