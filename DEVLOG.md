@@ -25,3 +25,37 @@
 - Set up Supabase tables (audits + leads schema)
 - Build the POST /api/audit route
 - Start the spend input form UI
+
+---
+
+## Day 2 — 2026-05-08
+
+**Hours worked:** 5
+
+**What I did:**
+- Created Supabase tables: audits, leads, rate_limits with RLS policies
+- Built supabase.ts with separate anon and admin clients
+- Built Zustand store with localStorage persistence for form state
+- Built POST /api/audit: validates input, runs audit engine,
+  calls Anthropic API for summary (with fallback), saves to Supabase
+- Built POST /api/leads: captures email, inserts lead, sends
+  confirmation email via Resend with honeypot spam protection
+- Manually tested both routes with curl — both working
+
+**What I learned:**
+- Supabase RLS was confusing at first — the anon key respects
+  policies but the service role key bypasses them entirely.
+  Keeping service role only on the server side is critical.
+- Anthropic API throws a 429 rate limit error on the free tier
+  if you spam it — the try/catch fallback saved me here.
+
+**Blockers / what I'm stuck on:**
+- Resend free tier only lets me send to my own email until
+  I verify a domain. Will set up domain verification tomorrow or
+  use the test mode for now.
+
+**Plan for tomorrow:**
+- Build the spend input form UI (src/app/audit/page.tsx)
+- Connect form to the Zustand store
+- Wire up the submit handler to POST /api/audit
+- Start the results page
