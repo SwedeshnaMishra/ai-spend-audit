@@ -16,7 +16,7 @@ export default function ToolsList({
   if (tools.length === 0) {
 
     return (
-      <div className="border border-dashed border-slate-800 rounded-2xl p-10 text-center mb-6 bg-slate-900/20">
+      <div className="border border-dashed border-slate-800 rounded-2xl py-12 px-6 text-center mb-6 bg-slate-900/20">
 
         <p className="text-slate-500 text-sm">
           No tools added yet
