@@ -59,3 +59,41 @@
 - Connect form to the Zustand store
 - Wire up the submit handler to POST /api/audit
 - Start the results page
+
+---
+
+## Day 3 — 2026-05-09
+
+**Hours worked:** 5
+
+**What I did:**
+- Built the landing page with hero section, CTA, and feature cards
+- Built the audit form page with AddToolForm, ToolsList,
+  and TeamContext components
+- Connected all form state to Zustand store — tested persistence
+  across page reloads, works correctly
+- Wired submit handler to POST /api/audit — form now redirects to
+  /audit/[id] on success
+- Verified end-to-end: added tools, submitted, confirmed row
+  appeared in Supabase audits table
+
+**What I learned:**
+- Passing the "actual spend" field separately from the list price
+  is important — users on negotiated or annual billing don't pay
+  list price. Showing "list price: $X/mo" as a hint helped.
+- Splitting form into three components (AddToolForm, ToolsList,
+  TeamContext) instead of one giant page made it much easier
+  to reason about state.
+
+**Blockers / what I'm stuck on:**
+- Results page (/audit/[id]) is still a 404 — building that tomorrow.
+- Need to decide how to handle the "API direct" tools where users
+  enter variable spend — no fixed plan price to show as a hint.
+
+**Plan for tomorrow:**
+- Build /audit/[id] results page
+- Per-tool breakdown cards
+- Hero savings number
+- AI summary block
+- Email capture modal
+- OG meta tags for sharing
