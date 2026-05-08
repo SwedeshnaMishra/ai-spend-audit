@@ -27,6 +27,63 @@ export default function AuditPage() {
 
   const [error, setError] = useState("");
 
+  async function handleSubmit() {
+
+  if (tools.length === 0) {
+
+    setError(
+      "Add at least one tool before running the audit."
+    );
+
+    return;
+  }
+
+  setError("");
+
+  setSubmitting(true);
+
+  try {
+
+    const res = await fetch("/api/audit", {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify({
+        tools,
+        teamSize,
+        useCase,
+      }),
+    });
+
+    if (!res.ok) {
+
+      const data = await res.json();
+
+      throw new Error(
+        data.error ?? "Something went wrong"
+      );
+    }
+
+    const { auditId } = await res.json();
+
+    router.push(`/audit/${auditId}`);
+
+  } catch (err: any) {
+
+    setError(
+      err.message ??
+      "Failed to run audit. Please try again."
+    );
+
+  } finally {
+
+    setSubmitting(false);
+  }
+}
+
   return (
     <main className="min-h-screen bg-[#0b1120] text-white">
 
@@ -122,7 +179,41 @@ export default function AuditPage() {
 
         </div>
 
-        {/* Submit button — Block 5 goes here */}
+        <div className="mt-8">
+
+  {error && (
+
+    <div className="mb-4 bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3">
+
+      <p className="text-red-400 text-sm">
+        {error}
+      </p>
+
+    </div>
+  )}
+
+  <button
+    onClick={handleSubmit}
+    disabled={submitting || tools.length === 0}
+    className="w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed text-black font-bold py-4 rounded-xl text-base transition-all flex items-center justify-center gap-3"
+  >
+
+    {submitting && (
+
+      <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+    )}
+
+    {submitting
+      ? "Analysing your stack..."
+      : "Get my free audit →"}
+
+  </button>
+
+  <p className="text-center text-slate-600 text-xs mt-3">
+    No account needed. Results are instant.
+  </p>
+
+</div>
 
       </div>
 
