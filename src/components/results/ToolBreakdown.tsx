@@ -33,12 +33,14 @@ export default function ToolBreakdown({ tools }: Props) {
         Tool-by-tool breakdown
       </h2>
       <div className="space-y-3">
-        {tools.map((tool, i) => (
+        {tools 
+          .filter((tool) => tool.monthlySavings > 0)
+          .map((tool, i) => (
           <div
             key={i}
-            className="bg-slate-900 border border-slate-800 rounded-xl p-5"
+            className="w-full bg-slate-900 border border-slate-800 rounded-2xl p-5 transition-all duration-200 hover:border-slate-700 hover:-translate-y-0.5"
           >
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start justify-between gap-8">
 
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap mb-2">
