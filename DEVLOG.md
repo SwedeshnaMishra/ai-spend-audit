@@ -97,3 +97,43 @@
 - AI summary block
 - Email capture modal
 - OG meta tags for sharing
+
+---
+
+## Day 4 — 2026-05-10
+
+**Hours worked:** 6
+
+**What I did:**
+- Created results page as a server component — fetches audit from
+  Supabase before render, shows 404 for invalid IDs
+- Built HeroSavings: big savings number ($X/mo, $Y/yr),
+  before/after spend comparison, separate "already optimal" state
+- Built ToolBreakdown: per-finding card with action badge
+  (downgrade/switch/optimize/keep), reason text, savings crossed out
+- Built AISummary with left-border accent and CredexCTA
+  (only renders when savings > $500/mo)
+- Built EmailCapture as client component: honeypot field,
+  two CTA variants based on savings level, success state
+- Added generateMetadata with OG and Twitter card tags
+- Verified OG tags at opengraph.xyz — previews correct
+
+**What I learned:**
+- generateMetadata must be async and in the same file as the page
+  in Next.js app router. Spent 20 minutes debugging a silent build
+  failure before finding this.
+- supabaseAdmin caused a build crash when I imported it into
+  EmailCapture (a client component). Fixed by keeping all DB access
+  in the server component and passing data as props down.
+
+**Blockers / what I'm stuck on:**
+- Resend domain not verified so confirmation emails only go to my
+  own address in test mode. Will set up domain tomorrow or document
+  this limitation in ARCHITECTURE.md.
+
+**Plan for tomorrow:**
+- Deploy on Vercel
+- Write .github/workflows/ci.yml (CI must be green)
+- Write ARCHITECTURE.md with Mermaid diagram
+- Write GTM.md, ECONOMICS.md, LANDING_COPY.md, METRICS.md
+- Start 3 user interviews — DM founders on X and IndieHackers today
