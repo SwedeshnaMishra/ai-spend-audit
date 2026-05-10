@@ -89,7 +89,7 @@ export default async function ResultsPage({ params }: PageProps) {
       <div className="max-w-3xl mx-auto px-6 py-12 space-y-10">
         <HeroSavings result={result} />
         <div className="flex justify-center -mt-4">
-  <ShareButton />
+  <ShareButton auditId={params.id} />
 </div>
         <AISummary   summary={summary} />
         <ToolBreakdown tools={result.tools} />

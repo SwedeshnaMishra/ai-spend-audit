@@ -1,27 +1,27 @@
 "use client"
 
-export default function ShareButton() {
+import { useState } from "react"
+
+interface Props { auditId: string }
+
+export default function ShareButton({ auditId }: Props) {
+  const [copied, setCopied] = useState(false)
 
   async function handleCopy() {
-
-    await navigator.clipboard.writeText(
-      window.location.href
-    )
-
-    alert("Shareable link copied!")
+    const url = `${window.location.origin}/audit/${auditId}`
+    await navigator.clipboard.writeText(url)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
   }
 
   return (
     <button
       onClick={handleCopy}
-      className="
-  text-sm
-  text-slate-500
-  hover:text-emerald-400
-  transition-colors
-"
+      className="w-full border border-slate-700 hover:border-slate-500
+                 text-slate-400 hover:text-white font-medium py-3
+                 rounded-xl text-sm transition-colors"
     >
-      Copy shareable link
+      {copied ? "Link copied!" : "Copy shareable link"}
     </button>
   )
 }
