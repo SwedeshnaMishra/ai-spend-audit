@@ -137,3 +137,46 @@
 - Write ARCHITECTURE.md with Mermaid diagram
 - Write GTM.md, ECONOMICS.md, LANDING_COPY.md, METRICS.md
 - Start 3 user interviews — DM founders on X and IndieHackers today
+
+---
+
+## Day 5 — 2026-05-11
+
+**Hours worked:** 6
+
+**What I did:**
+- Set up GitHub Actions CI — lint + tests run on every push to main,
+  currently green
+- Wrote ARCHITECTURE.md: Mermaid system diagram, full data flow
+  walkthrough, stack decision table, 10k/day scaling notes
+- Wrote GTM.md: specific target user persona, exact subreddits
+  and Slack groups, week-by-week 30-day plan, unfair channel
+  (Credex customer base), week-1 traction targets
+- Wrote ECONOMICS.md: lead value calculation with reasoning,
+  CAC per channel, full conversion funnel math, $1M ARR model
+- Wrote LANDING_COPY.md: headline, subheadline, CTA, mocked social
+  proof, 5 FAQ entries
+- Wrote METRICS.md: North Star (audits/week), 3 input metrics,
+  instrumentation priority, pivot trigger numbers
+- Sent outreach to 5 people for user interviews — 2 confirmed,
+  1 interview already done
+
+**What I learned:**
+- Writing the ECONOMICS.md forced me to think through the full
+  funnel carefully. The most critical number turned out to be the
+  Credex customer base size — the $1M ARR model only works if
+  Credex has 1,000+ warm contacts, which I had to caveat.
+- The Mermaid diagram in ARCHITECTURE.md was harder to write than
+  expected — Mermaid syntax is fussy. Tested it at mermaid.live
+  before committing.
+
+**Blockers / what I'm stuck on:**
+- Still need 2 more user interviews — scheduled for tomorrow
+- Haven't written REFLECTION.md or TESTS.md yet — saving for Day 6
+
+**Plan for tomorrow:**
+- Complete all 3 user interviews and write USER_INTERVIEWS.md
+- Write REFLECTION.md (all 5 questions, 150-400 words each)
+- Write TESTS.md
+- Update README.md with live URL, screenshots, decisions section
+- Final polish pass on the app UI
