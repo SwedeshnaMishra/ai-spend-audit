@@ -145,6 +145,7 @@
 **Hours worked:** 6
 
 **What I did:**
+- Deployed on Vercel
 - Set up GitHub Actions CI — lint + tests run on every push to main,
   currently green
 - Wrote ARCHITECTURE.md: Mermaid system diagram, full data flow
@@ -171,6 +172,7 @@
   before committing.
 
 **Blockers / what I'm stuck on:**
+- Issue in GitHub Actions CI, I will solve it tomorrow
 - Still need 2 more user interviews — scheduled for tomorrow
 - Haven't written REFLECTION.md or TESTS.md yet — saving for Day 6
 
