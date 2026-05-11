@@ -7,6 +7,8 @@ import AISummary      from "@/components/results/AISummary"
 import CredexCTA      from "@/components/results/CredexCTA"
 import EmailCapture   from "@/components/results/EmailCapture"
 import ShareButton from "@/components/results/ShareButton"
+
+export const dynamic = 'force-dynamic'
 interface PageProps {
   params: { id: string }
 }
