@@ -68,7 +68,7 @@ async function generateSummary(
       .sort((a, b) => b.monthlySavings - a.monthlySavings)[0]
 
     const msg = await anthropic.messages.create({
-      model: "claude-sonnet-4-20250514",
+      model: "claude-sonnet-4-5",
       max_tokens: 200,
       messages: [
         {
