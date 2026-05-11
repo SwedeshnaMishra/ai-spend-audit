@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     const isHighSavings = totalSavings > 500
 
     await resend.emails.send({
-      from: "SpendLens <audit@yourdomain.com>",
+      from: "SpendLens <onboarding@resend.dev>",
       to: email,
       subject: "Your AI spend audit report",
       html: buildEmailHTML(auditId, totalSavings, isHighSavings),
