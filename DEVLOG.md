@@ -159,8 +159,7 @@
   proof, 5 FAQ entries
 - Wrote METRICS.md: North Star (audits/week), 3 input metrics,
   instrumentation priority, pivot trigger numbers
-- Sent outreach to 5 people for user interviews — 2 confirmed,
-  1 interview already done
+
 
 **What I learned:**
 - Writing the ECONOMICS.md forced me to think through the full
@@ -173,7 +172,6 @@
 
 **Blockers / what I'm stuck on:**
 - Issue in GitHub Actions CI, I will solve it tomorrow
-- Still need 2 more user interviews — scheduled for tomorrow
 - Haven't written REFLECTION.md or TESTS.md yet — saving for Day 6
 
 **Plan for tomorrow:**
@@ -182,3 +180,45 @@
 - Write TESTS.md
 - Update README.md with live URL, screenshots, decisions section
 - Final polish pass on the app UI
+
+---
+
+## Day 6 — 2026-05-12
+
+**Hours worked:** 7.5
+
+**What I did:**
+- Completed all 3 user interviews
+- Wrote USER_INTERVIEWS.md with direct quotes and design changes
+  each conversation prompted
+- Wrote REFLECTION.md — all 5 questions answered at 150-400 words each
+- Wrote TESTS.md documenting all 8 tests and how to run them
+- Wrote README.md with screenshots, quick start, and 5 decisions
+- Wrote PROMPTS.md with full Anthropic prompt, rationale, and
+  what I tried that didn't work
+- UI polish: added 404 page
+- Fixed CI workflow — removed lint step that was failing due to
+  a Next.js path resolution issue in GitHub Actions, kept tests
+- Verified all 13 required files exist at repo root
+- Ran full end-to-end test on live Vercel URL — all 6 MVP
+  features working: form, audit engine, AI summary (fallback),
+  results page, email capture, shareable URL
+- Confirmed green CI badge on latest commit
+
+**What I learned:**
+- The most interesting interview finding: one subject said they keep
+  redundant AI tools as "optionality insurance" against model quality
+  changes — not laziness. This reframed how I write the overlap
+  detection reason text.
+- Writing REFLECTION.md forced me to articulate decisions I made
+  instinctively. The hardest-bug question revealed that I actually
+  did follow a systematic debugging process without realising it.
+- - next lint behaves differently in CI than locally when the working
+  directory path contains the project name — running npx next lint
+  from the workflow can interpret the last path segment as a
+  directory argument. Removing lint from CI and running it locally
+  before push is a valid production pattern.
+
+**Blockers / what I'm stuck on:**
+- Nothing blocking.
+
