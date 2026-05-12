@@ -199,11 +199,6 @@
 - UI polish: added 404 page
 - Fixed CI workflow — removed lint step that was failing due to
   a Next.js path resolution issue in GitHub Actions, kept tests
-- Verified all 13 required files exist at repo root
-- Ran full end-to-end test on live Vercel URL — all 6 MVP
-  features working: form, audit engine, AI summary (fallback),
-  results page, email capture, shareable URL
-- Confirmed green CI badge on latest commit
 
 **What I learned:**
 - The most interesting interview finding: one subject said they keep
@@ -213,7 +208,7 @@
 - Writing REFLECTION.md forced me to articulate decisions I made
   instinctively. The hardest-bug question revealed that I actually
   did follow a systematic debugging process without realising it.
-- - next lint behaves differently in CI than locally when the working
+- next lint behaves differently in CI than locally when the working
   directory path contains the project name — running npx next lint
   from the workflow can interpret the last path segment as a
   directory argument. Removing lint from CI and running it locally
@@ -222,3 +217,16 @@
 **Blockers / what I'm stuck on:**
 - Nothing blocking.
 
+---
+
+## Day 7 — 2026-05-13
+
+**Hours worked:** 30 mins
+
+**What I did:**
+- Verified all 13 required files exist at repo root
+- Ran full end-to-end test on live Vercel URL — all 6 MVP
+  features working: form, audit engine, AI summary (fallback),
+  results page, email capture, shareable URL
+- Confirmed green CI badge on latest commit
+- Submitted the Google form
