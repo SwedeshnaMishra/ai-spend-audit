@@ -21,7 +21,7 @@ and a shareable audit report.
 ## Live demo
 
 * Live app: [https://ai-spend-audit-beta.vercel.app/](https://ai-spend-audit-beta.vercel.app/)
-* GitHub repo: [https://github.com/SwedeshnaMishra/ai-spend-audit.git](https://github.com/SwedeshnaMishra/ai-spend-audit.git)
+* GitHub repo: [https://github.com/SwedeshnaMishra/ai-spend-audit.git](https://github.com/SwedeshnaMishra/SpendLens-AI-Spend-Audit.git)
 
 ---
 
@@ -181,8 +181,8 @@ This guarantees the app always returns usable results.
 ### Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-spend-audit
-cd ai-spend-audit
+git clone https://github.com/SwedeshnaMishra/SpendLens-AI-Spend-Audit.git
+cd SpendLens-AI-Spend-Audit
 npm install
 ```
 
