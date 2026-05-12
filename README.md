@@ -243,6 +243,14 @@ Every push to `main` automatically triggers:
 * Vitest test suite
 * Vercel deployment
 
+### Email delivery note
+
+Email delivery currently runs in Resend testing mode,
+which restricts outbound delivery to verified email addresses only.
+
+The integration itself is fully functional and production-ready once
+a custom domain is attached and verified in Resend.
+
 ---
 
 ## Project structure
